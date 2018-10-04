@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_activate_alarm"
+        android:title="Activate" />
+    <item android:id="@+id/menu_rm_item"
+        android:title="Remove" />
+    <item android:id="@+id/menu_change_item"
+        android:title="Change"
+        android:showAsAction="ifRoom" />
+    <item android:id="@+id/menu_disactivate_alarm"
+        android:title="Disactivate" />
+</menu>

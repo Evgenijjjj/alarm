@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartPage"
+    android:descendantFocusability="blocksDescendants">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:cacheColorHint="@android:color/transparent"
+        android:choiceMode="none"
+        android:gravity="center"
+        android:listSelector="@android:color/transparent"
+        android:stretchMode="columnWidth" />
+
+    <Button
+        android:id="@+id/addNewAlarmBtn"
+        android:layout_width="53dp"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/oval_button"
+        android:text="+"
+        android:textAppearance="@android:style/TextAppearance.Holo.Large.Inverse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</FrameLayout>
