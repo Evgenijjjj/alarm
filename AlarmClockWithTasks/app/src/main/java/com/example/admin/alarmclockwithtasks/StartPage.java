@@ -11,6 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -34,8 +36,7 @@ import java.util.Map;
 
 import kotlin.collections.AbstractMutableMap;
 
-public class StartPage extends AppCompatActivity implements View.OnClickListener/*, ListView.OnItemClickListener, PopupMenu.OnMenuItemClickListener*/
-{
+public class StartPage extends AppCompatActivity implements View.OnClickListener {
 
     private Button AddNewAlarmBtn;
     private DBHelper db;
@@ -47,16 +48,20 @@ public class StartPage extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
 
+        //int resId = R.anim.layout_animation_fall_down;
+        //LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(this, resId);
+
         AddNewAlarmBtn = (Button)findViewById(R.id.addNewAlarmBtn);
         listView = (ListView)findViewById(R.id.listView);
+        //listView.scheduleLayoutAnimation();
 
+        //listView.setLayoutAnimation(animation);
         AddNewAlarmBtn.setOnClickListener(this);
 
         db = new DBHelper(this);
         //db.deleteAll();
-        adapter = new CustomAdapter(this,R.layout.list_item,new ArrayList<String>());
+        adapter = new CustomAdapter(this,R.layout.list_item,new ArrayList<String>(),listView);
         listView.setAdapter(adapter);
-        adapter.updateData();
     }
 
     @Override
@@ -66,53 +71,11 @@ public class StartPage extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    /*@Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //Toast.makeText(this, "item " + id + " clicked " , Toast.LENGTH_SHORT).show();
-        //CURRENT_SELECTED_VIEW = view;
-        SELECTED_VIEW_POSITION = position;
-        Log.d("CUR_VIEW",String.valueOf(SELECTED_VIEW_POSITION/2));
-        CURRENT_SELECTED_VIEW = adapter.getView(SELECTED_VIEW_POSITION,view,(ViewGroup) view);
-
-        PopupMenu popup = new PopupMenu(this, view);
-        popup.setOnMenuItemClickListener(this);
-        popup.inflate(R.menu.item_menu);
-        popup.show();
-    }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-
-        Log.d("CUR_VIEW",CURRENT_SELECTED_VIEW.toString());
-
-        switch (item.getItemId()) {
-            case R.id.menu_rm_item:
-                Toast.makeText(this, "item " + item + " will be removed" , Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_change_item:
-                Toast.makeText(this, "item " + item.toString() + " will be changed" , Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_activate_alarm:
-                CURRENT_SELECTED_VIEW.setBackgroundColor(Color.GREEN);
-                adapter.notifyDataSetChanged();
-                Toast.makeText(this, "item " + item.toString() + " will be activated" , Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_disactivate_alarm:
-                CURRENT_SELECTED_VIEW.setBackgroundColor(Color.TRANSPARENT);
-                adapter.notifyDataSetChanged();
-                Toast.makeText(this, "item " + item.toString() + " will be disactivated" , Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return false;
-        }
-    }*/
-
-
 
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.updateData();
+        adapter.updateData(-1);
     }
 
 }

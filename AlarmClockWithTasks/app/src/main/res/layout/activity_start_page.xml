@@ -16,7 +16,13 @@
         android:choiceMode="none"
         android:gravity="center"
         android:listSelector="@android:color/transparent"
-        android:stretchMode="columnWidth" />
+        android:stretchMode="columnWidth"
+        android:divider="@android:color/white"
+        android:dividerHeight="10dp"
+        android:footerDividersEnabled="true"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
+        android:layoutAnimation="@anim/layout_animation_fall_down"/>
 
     <Button
         android:id="@+id/addNewAlarmBtn"

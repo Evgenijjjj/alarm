@@ -22,6 +22,9 @@
             android:name=".AddAlarm"
             android:label="Add New Alarm">
         </activity>
+        <activity android:name=".ChangeAlarm">
+            android:label="Change Alarm">
+        </activity>
 
         <meta-data
             android:name="com.google.android.actions"
