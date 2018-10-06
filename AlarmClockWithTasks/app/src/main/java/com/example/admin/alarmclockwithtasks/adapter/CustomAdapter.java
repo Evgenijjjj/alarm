@@ -178,6 +178,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
                     i.putExtra("hourOfDay",a.getHourOfDay());
                     i.putExtra("minute",a.getMinute());
                     i.putExtra("selection",a.getSelectionFlag());
+                    i.putExtra("selectedDaysIntArray",a.getIntArraySelectedDays());
 
                     getContext().startActivity(i);
                     //updateData(position);
