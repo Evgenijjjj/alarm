@@ -141,7 +141,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void deleteAlarm(Alarm a){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String[] arr = {a.getStringHourOfDay(),a.getStringMinute()};
+        String[] arr = {a.getStringHourOfDay(),a.getStringMinuteForDB()};
         db.delete(TABLE_NAME, COL_HOUROFDAY + "=? and " + COL_MINUTE + "=?", arr);
 
         db.close();

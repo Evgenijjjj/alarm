@@ -65,6 +65,10 @@ public class Alarm {
         return String.valueOf(minute);
     }
 
+    public String getStringMinuteForDB(){
+        return String.valueOf(minute);
+    }
+
     public boolean getSelectionFlag() {
         if(this.selectionFlag == 0)
             return false;
