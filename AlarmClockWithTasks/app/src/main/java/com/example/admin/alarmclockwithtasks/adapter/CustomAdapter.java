@@ -95,14 +95,14 @@ public class CustomAdapter extends ArrayAdapter<String> {
 
             if(data.get(position).getSelectionFlag()){
                 viewHolder.checkBox.setChecked(true);
-                viewHolder.listItem.setBackgroundColor(Color.parseColor("#00FFFF"));
+                viewHolder.listItem.setBackgroundColor(Color.parseColor("#AFEEEE"));
             }
 
 
             viewHolder.deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(),"RM " + data.get(position).getStringHourOfDay()+":"+data.get(position).getStringMinute(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"RM " + data.get(position).getStringHourOfDay()+":"+data.get(position).getStringMinute(),Toast.LENGTH_SHORT).show();
                     int pos = position;
                     Alarm a = data.get(position);
                     DBHelper db = new DBHelper(getContext());
@@ -118,7 +118,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
                 @Override
                 public void onClick(View v) {
                     Alarm a = data.get(position);
-                    Toast.makeText(getContext(),"CHANGE " + a.getStringHourOfDay()+":"+a.getStringMinute(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"CHANGE " + a.getStringHourOfDay()+":"+a.getStringMinute(),Toast.LENGTH_SHORT).show();
 
                     Intent i = new Intent(getContext(),ChangeAlarm.class);
                     i.putExtra("hourOfDay",a.getHourOfDay());
@@ -156,7 +156,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
             mainViewHolder.deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(),"RM' " + data.get(position).getStringHourOfDay()+":"+data.get(position).getStringMinute(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"RM' " + data.get(position).getStringHourOfDay()+":"+data.get(position).getStringMinute(),Toast.LENGTH_SHORT).show();
                     int pos = position;
                     Alarm a = data.get(position);
                     DBHelper db = new DBHelper(getContext());
@@ -172,7 +172,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
                 @Override
                 public void onClick(View v) {
                     Alarm a = data.get(position);
-                    Toast.makeText(getContext(),"CHANGE' " + a.getStringHourOfDay()+":"+a.getStringMinute(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"CHANGE' " + a.getStringHourOfDay()+":"+a.getStringMinute(),Toast.LENGTH_SHORT).show();
 
                     Intent i = new Intent(getContext(),ChangeAlarm.class);
                     i.putExtra("hourOfDay",a.getHourOfDay());
@@ -235,7 +235,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
                         a.setSelectionFlag(false);
                         db.insertData(a);
                         viewHolder.listItem.setBackgroundColor(Color.TRANSPARENT);
-                        Toast.makeText(getContext(), "Max 6 Alarms in one time !", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "Max 6 Alarms in one time !", Toast.LENGTH_SHORT).show();
                         updateData(position);
                     }
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddAlarm">
+    tools:context=".ChangeAlarm">
 
     <ImageButton
         android:id="@+id/addBtnBackT"
@@ -17,7 +17,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_above="@id/addNewAlarmBtnT"
+        android:layout_above="@id/frameLayout1"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center|bottom"
         android:layout_marginHorizontal="50dp"
@@ -34,6 +34,49 @@
 
 
     </FrameLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/addNewAlarmBtnT"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|bottom"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/custom_rectangle"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/custom_time_picker_dialog_tvSelectedDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test Mn Tu"
+            android:layout_gravity="center|left"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="60dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:id="@+id/changeSelectedDays"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="15dp"
+            android:scaleType="fitXY"
+            tools:src="@drawable/days_calendar"
+            android:background="@drawable/days_calendar"/>
+
+
+
+    </FrameLayout>
+
 
 
     <ImageButton

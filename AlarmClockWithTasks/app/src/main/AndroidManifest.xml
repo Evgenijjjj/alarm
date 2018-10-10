@@ -22,7 +22,8 @@
             android:name=".AddAlarm"
             android:label="Add New Alarm">
         </activity>
-        <activity android:name=".ChangeAlarm">
+        <activity
+            android:name=".ChangeAlarm"
             android:label="Change Alarm">
         </activity>
 

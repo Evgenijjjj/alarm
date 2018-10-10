@@ -40,7 +40,6 @@ CheckBox.OnCheckedChangeListener{
     private int[] CHECKED_DAYS_ARRAY = {0,0,0,0,0,0,0};
     private Alarm ALARM;
     private PopupWindow popupWindow;
-    //private PopupWindow popupWindow;
 
 
     @Override
@@ -91,6 +90,7 @@ CheckBox.OnCheckedChangeListener{
             db = new DBHelper(this);
 
             ALARM.setMinute(MINUTE);
+            ALARM.setHourOfDay(HOUR);
             if(db.checkMaxLimit())
                 ALARM.setSelectionFlag(false);
             else
@@ -162,7 +162,6 @@ CheckBox.OnCheckedChangeListener{
         db = new DBHelper(this);
         if(isChecked) {
             if (buttonView.getId() == R.id.select_days_popup_menu_monday) {
-                Toast.makeText(this, "Monday checked", Toast.LENGTH_SHORT).show();
                 CHECKED_DAYS_ARRAY[0] =1;
             }
             if(buttonView.getId() == R.id.select_days_popup_menu_tuesday){
@@ -186,7 +185,6 @@ CheckBox.OnCheckedChangeListener{
         }
         else{
             if (buttonView.getId() == R.id.select_days_popup_menu_monday) {
-                Toast.makeText(this, "Monday is unchecked", Toast.LENGTH_SHORT).show();
                 CHECKED_DAYS_ARRAY[0] =0;
             }
             if(buttonView.getId() == R.id.select_days_popup_menu_tuesday){
